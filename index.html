@@ -24,9 +24,6 @@
   a { color:var(--link); text-decoration:none; }
   a:hover { text-decoration:underline; }
   .meta { color:var(--muted); }
-  .proj { margin:12px 0; }
-  .proj .name { font-weight:600; }
-  .proj .desc { color:var(--muted); }
 </style>
 </head>
 <body>
@@ -60,28 +57,6 @@
       <em>DATE 2026</em>.
     </li>
   </ul>
-
-  <h2>Selected Projects</h2>
-  <div class="proj">
-    <span class="name"><a href="https://github.com/River41/redis-bpf-profiler">redis-bpf-profiler</a></span> —
-    <span class="desc">Non-invasive, high-performance Redis profiler powered by eBPF; attaches uprobes to
-    internal Redis functions to track command latency, types, and arguments with no application changes (C, libbpf).</span>
-  </div>
-  <div class="proj">
-    <span class="name"><a href="https://github.com/River41/xdp-operator">xdp-operator</a></span> —
-    <span class="desc">Kubernetes operator that deploys and attaches XDP/eBPF programs to cluster nodes
-    through a native <code>XdpProgram</code> custom resource (Go, kubebuilder).</span>
-  </div>
-  <div class="proj">
-    <span class="name"><a href="https://github.com/River41/SysCode-RAG-Engine">SysCode-RAG-Engine</a></span> —
-    <span class="desc">AST-aware RAG and LoRA fine-tuning engine for deep understanding of systems code
-    (C/C++, eBPF, Rust).</span>
-  </div>
-  <div class="proj">
-    <span class="name"><a href="https://github.com/River41/kernel_history_corpus">kernel_history_corpus</a></span> —
-    <span class="desc">Resumable pipeline that extracts, compiles, and executes 147K+ historical kernel
-    versions to build evidence-backed datasets for systems-code models.</span>
-  </div>
 
   <h2>Contact</h2>
   <p>
