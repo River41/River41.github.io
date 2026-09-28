@@ -92,8 +92,8 @@
                                 <p class="text-profile-address">
                                     <i class="fas fa-map-marker-alt"></i> New York, NY, USA <br />
                                 </p>
-                                <a class="pr-3 no-break" href="mailto:zl3604@columbia.edu">
-                                    <i class="fas fa-envelope"></i> <span class="email-text">zl3604@columbia.edu</span>
+                                <a class="pr-3 no-break email-obfuscated" href="#" data-user="zl3604" data-domain="columbia.edu">
+                                    <i class="fas fa-envelope"></i> <span class="email-text">zl3604 [at] columbia.edu</span>
                                 </a>
                                 <a class="pr-3 no-break" target="_blank" href="https://github.com/River41">
                                     <i class="fab fa-github"></i> GitHub
@@ -325,5 +325,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"
         integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg=="
         crossorigin="anonymous"></script>
+
+    <script>
+        // Email obfuscation: assemble the mailto link at runtime so the plain address
+        // never appears in the page source for crawlers to harvest.
+        (function () {
+            var els = document.querySelectorAll('a.email-obfuscated');
+            for (var i = 0; i < els.length; i++) {
+                var user = els[i].getAttribute('data-user');
+                var domain = els[i].getAttribute('data-domain');
+                if (user && domain) {
+                    els[i].setAttribute('href', 'mailto:' + user + String.fromCharCode(64) + domain);
+                }
+            }
+        })();
+    </script>
 </body>
 </html>
