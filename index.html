@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Zhiyuan (River) Lu — computer systems: runtime verification & timing analysis, systems for ML, design automation.">
+<title>Zhiyuan (River) Lu</title>
+<style>
+  :root { --fg:#24292f; --muted:#57606a; --link:#0969da; --line:#d0d7de; --bg:#ffffff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg:#e6edf3; --muted:#8b949e; --link:#58a6ff; --line:#30363d; --bg:#0d1117; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width:700px; margin:0 auto; padding:56px 24px 80px; }
+  h1 { font-size:1.75rem; margin:0 0 6px; }
+  .sub { color:var(--muted); margin:0 0 30px; }
+  h2 { font-size:1.02rem; text-transform:uppercase; letter-spacing:.07em;
+       color:var(--muted); border-bottom:1px solid var(--line);
+       padding-bottom:6px; margin:38px 0 14px; }
+  ul { margin:0; padding-left:20px; }
+  li { margin:10px 0; }
+  a { color:var(--link); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .meta { color:var(--muted); }
+  .proj { margin:12px 0; }
+  .proj .name { font-weight:600; }
+  .proj .desc { color:var(--muted); }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>Zhiyuan (River) Lu</h1>
+  <p class="sub">M.S. in Electrical Engineering, Columbia University (expected Dec 2026) · Graduate Research Assistant</p>
+
+  <h2>About</h2>
+  <p>
+    I am an M.S. student in Electrical Engineering at Columbia University and a graduate research
+    assistant, working on eBPF-based runtime verification and worst-case execution time (WCET)
+    analysis for real-time systems. Previously, I did undergraduate research on electronic design
+    automation at CUHK-Shenzhen — FPGA DSP placement and PCB physical design.
+  </p>
+  <p class="meta">
+    Research interests: runtime verification &amp; program analysis · systems for machine learning ·
+    design automation
+  </p>
+
+  <h2>Publications</h2>
+  <ul>
+    <li>
+      B. Xie, X. Zhu, <strong>Z. Lu</strong>, T. Chen.
+      “DSPlacer: DSP Placement for FPGA-based CNN Accelerator.”
+      <em>DAC 2025</em>. <a href="https://doi.org/10.1109/DAC63849.2025.11132920">DOI</a>
+    </li>
+    <li>
+      Y. Han, B. Li, R. Fu, Q. Ye, <strong>Z. Lu</strong>, J. Liu, B. Yu, T.-Y. Ho, T. Chen.
+      “PCB-Migrator: Automated PCB PnR Migration.”
+      <em>DATE 2026</em>.
+    </li>
+  </ul>
+
+  <h2>Selected Projects</h2>
+  <div class="proj">
+    <span class="name"><a href="https://github.com/River41/redis-bpf-profiler">redis-bpf-profiler</a></span> —
+    <span class="desc">Non-invasive, high-performance Redis profiler powered by eBPF; attaches uprobes to
+    internal Redis functions to track command latency, types, and arguments with no application changes (C, libbpf).</span>
+  </div>
+  <div class="proj">
+    <span class="name"><a href="https://github.com/River41/xdp-operator">xdp-operator</a></span> —
+    <span class="desc">Kubernetes operator that deploys and attaches XDP/eBPF programs to cluster nodes
+    through a native <code>XdpProgram</code> custom resource (Go, kubebuilder).</span>
+  </div>
+  <div class="proj">
+    <span class="name"><a href="https://github.com/River41/SysCode-RAG-Engine">SysCode-RAG-Engine</a></span> —
+    <span class="desc">AST-aware RAG and LoRA fine-tuning engine for deep understanding of systems code
+    (C/C++, eBPF, Rust).</span>
+  </div>
+  <div class="proj">
+    <span class="name"><a href="https://github.com/River41/kernel_history_corpus">kernel_history_corpus</a></span> —
+    <span class="desc">Resumable pipeline that extracts, compiles, and executes 147K+ historical kernel
+    versions to build evidence-backed datasets for systems-code models.</span>
+  </div>
+
+  <h2>Contact</h2>
+  <p>
+    <a href="mailto:zl3604@columbia.edu">zl3604@columbia.edu</a> ·
+    <a href="https://www.linkedin.com/in/zhiyuan-river-lu">LinkedIn</a> ·
+    <a href="https://github.com/River41">GitHub</a>
+  </p>
+
+</main>
+</body>
+</html>
