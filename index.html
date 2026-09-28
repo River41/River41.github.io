@@ -1,70 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Layout adapted from the public template: https://github.com/luost26/academic-homepage -->
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Zhiyuan (River) Lu — computer systems: runtime verification & timing analysis, systems for ML, design automation.">
-<title>Zhiyuan (River) Lu</title>
-<style>
-  :root { --fg:#24292f; --muted:#57606a; --link:#0969da; --line:#d0d7de; --bg:#ffffff; }
-  @media (prefers-color-scheme: dark) {
-    :root { --fg:#e6edf3; --muted:#8b949e; --link:#58a6ff; --line:#30363d; --bg:#0d1117; }
-  }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--fg);
-         font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-  main { max-width:700px; margin:0 auto; padding:56px 24px 80px; }
-  h1 { font-size:1.75rem; margin:0 0 6px; }
-  .sub { color:var(--muted); margin:0 0 30px; }
-  h2 { font-size:1.02rem; text-transform:uppercase; letter-spacing:.07em;
-       color:var(--muted); border-bottom:1px solid var(--line);
-       padding-bottom:6px; margin:38px 0 14px; }
-  ul { margin:0; padding-left:20px; }
-  li { margin:10px 0; }
-  a { color:var(--link); text-decoration:none; }
-  a:hover { text-decoration:underline; }
-  .meta { color:var(--muted); }
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Zhiyuan (River) Lu</title>
+    <meta name="description" content="Zhiyuan (River) Lu — computer systems: runtime verification & timing analysis, systems for ML, design automation.">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+        integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            padding-top: 5.0rem;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+        }
+        .text-profile-position { font-weight: 400; }
+        .text-profile-bio { font-weight: 400; }
+        .navbar { opacity: 0.95; }
+        .no-break { white-space: nowrap; }
+        .badge-publication { font-size: 100%; }
+        .email-text { font-family: Courier, monospace; }
+    </style>
 </head>
-<body>
-<main>
 
-  <h1>Zhiyuan (River) Lu</h1>
-  <p class="sub">M.S. in Electrical Engineering, Columbia University (expected Dec 2026) · Graduate Research Assistant</p>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top mb-5 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand"><strong>river41.github.io</strong></a>
+            <button class="navbar-toggler" style="font-size: 1em; padding: 0.5em;" type="button"
+                data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-map"></i> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#publications">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/River41" target="_blank">GitHub</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <h2>About</h2>
-  <p>
-    I am an M.S. student in Electrical Engineering at Columbia University and a graduate research
-    assistant, working on eBPF-based runtime verification and worst-case execution time (WCET)
-    analysis for real-time systems. Previously, I did undergraduate research on electronic design
-    automation at CUHK-Shenzhen — FPGA DSP placement and PCB physical design.
-  </p>
-  <p class="meta">
-    Research interests: runtime verification &amp; program analysis · systems for machine learning ·
-    design automation
-  </p>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card border-0 shadow-sm bg-white">
+                    <div class="card-body p-5">
+                        <div class="row">
+                            <div class="col">
+                                <p class="h1 font-weight-normal">Zhiyuan (River) Lu</p>
+                                <p class="text-profile-position">
+                                    <strong>M.S. Student @Electrical Engineering, Columbia University</strong><br />
+                                </p>
+                                <div class="text-profile-bio">
+                                    <p>Hi! I am Zhiyuan (River) Lu, an M.S. student in <a href="https://www.ee.columbia.edu/">Electrical Engineering</a> at <a href="https://www.columbia.edu/">Columbia University</a> and a graduate research assistant, working on <strong>eBPF-based runtime verification and worst-case execution time (WCET) analysis</strong> for real-time systems. Previously, I did undergraduate research on electronic design automation at <a href="https://www.cuhk.edu.cn/en">CUHK-Shenzhen</a> — FPGA DSP placement and PCB physical design.</p>
+                                    <p>My research interests span computer systems: runtime verification &amp; program analysis, systems for machine learning, and design automation. I am always happy to talk about research in related areas — feel free to reach out!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-profile-address">
+                                    <i class="fas fa-map-marker-alt"></i> New York, NY, USA <br />
+                                </p>
+                                <a class="pr-3 no-break" href="mailto:zl3604@columbia.edu">
+                                    <i class="fas fa-envelope"></i> <span class="email-text">zl3604@columbia.edu</span>
+                                </a>
+                                <a class="pr-3 no-break" target="_blank" href="https://github.com/River41">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a class="pr-3 no-break" target="_blank" href="https://www.linkedin.com/in/zhiyuan-river-lu">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  <h2>Publications</h2>
-  <ul>
-    <li>
-      B. Xie, X. Zhu, <strong>Z. Lu</strong>, T. Chen.
-      “DSPlacer: DSP Placement for FPGA-based CNN Accelerator.”
-      <em>DAC 2025</em>. <a href="https://doi.org/10.1109/DAC63849.2025.11132920">DOI</a>
-    </li>
-    <li>
-      Y. Han, B. Li, R. Fu, Q. Ye, <strong>Z. Lu</strong>, J. Liu, B. Yu, T.-Y. Ho, T. Chen.
-      “PCB-Migrator: Automated PCB PnR Migration.”
-      <em>DATE 2026</em>.
-    </li>
-  </ul>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="card border-0 shadow-sm bg-white">
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mx-2 my-1">
+                                    <h6>Education</h6>
+                                    <ul class="list-unstyled mb-1">
+                                        <li class="media mb-1">
+                                            <i class="fas fa-university mr-2 mt-1 text-muted"></i>
+                                            <div class="media-body">
+                                                <div class="d-flex align-items-center">
+                                                    <div>Columbia University</div>
+                                                </div>
+                                                <div class="small"></div>
+                                                <div class="small d-flex">
+                                                    <div>M.S. in Electrical Engineering</div>
+                                                    <div class="mt-auto ml-auto no-break"><em>Expected Dec. 2026</em></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="media mb-1">
+                                            <i class="fas fa-university mr-2 mt-1 text-muted"></i>
+                                            <div class="media-body">
+                                                <div class="d-flex align-items-center">
+                                                    <div>The Chinese University of Hong Kong, Shenzhen</div>
+                                                </div>
+                                                <div class="small"></div>
+                                                <div class="small d-flex">
+                                                    <div>B.Sc. in Mathematics and Applied Mathematics</div>
+                                                    <div class="mt-auto ml-auto no-break"><em>May 2025</em></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mx-2 my-1">
+                                    <h6>Experience</h6>
+                                    <ul class="list-unstyled mb-1">
+                                        <li class="media mb-1">
+                                            <i class="fas fa-briefcase mr-2 mt-1 text-muted"></i>
+                                            <div class="media-body">
+                                                <div>Columbia University</div>
+                                                <div class="small"></div>
+                                                <div class="small d-flex">
+                                                    <div>Graduate Research Assistant<br />Runtime verification &amp; worst-case execution time analysis for eBPF programs.</div>
+                                                    <div class="mt-auto ml-auto no-break"><em>Oct. 2025 - Present</em></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="media mb-1">
+                                            <i class="fas fa-briefcase mr-2 mt-1 text-muted"></i>
+                                            <div class="media-body">
+                                                <div>The Chinese University of Hong Kong, Shenzhen</div>
+                                                <div class="small"></div>
+                                                <div class="small d-flex">
+                                                    <div>Undergraduate Research Assistant<br />Design automation: FPGA DSP placement (DSPlacer) and PCB layout migration (PCB-Migrator).</div>
+                                                    <div class="mt-auto ml-auto no-break"><em>Apr. 2024 - Apr. 2025</em></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mx-2 my-1">
+                                    <h6>Honors &amp; Awards</h6>
+                                    <ul class="list small pl-3 mb-1">
+                                        <li>
+                                            <div class="d-flex">
+                                                <div><strong>Dean's List</strong><small> (Top 20% of school)</small>, CUHK-Shenzhen</div>
+                                                <div class="ml-auto mt-auto no-break"><em>AY 2023-24</em></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div><strong>Muse Inspirational &amp; Bowen II Scholarship</strong>, CUHK-Shenzhen</div>
+                                                <div class="ml-auto mt-auto no-break"><em></em></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  <h2>Contact</h2>
-  <p>
-    <a href="mailto:zl3604@columbia.edu">zl3604@columbia.edu</a> ·
-    <a href="https://www.linkedin.com/in/zhiyuan-river-lu">LinkedIn</a> ·
-    <a href="https://github.com/River41">GitHub</a>
-  </p>
+        <div class="my-3 bg-white shadow-sm rounded-sm" id="publications">
+            <h6 class="border-bottom p-3 mb-0">
+                <i class="fas fa-star"></i> Publications
+            </h6>
 
-</main>
+            <div class="d-none d-md-block">
+                <div class="row no-gutters border-bottom"><div class="col-md-3 col-xl-2 mb-md-0 p-md-3 d-flex align-items-center">
+                        <img src="assets/images/covers/dsplacer.jpg" alt="DSPlacer: DSP Placement for FPGA-based CNN Accelerator" class="w-100 rounded-sm">
+                    </div>
+                    <div class="col-md-9 col-xl-10 p-3 pl-md-0"><h5 class="mt-0 mb-1 font-weight-normal">DSPlacer: DSP Placement for FPGA-based CNN Accelerator</h5>
+                        <p class="mt-0 mb-0 small"><span class="text-body">
+                        Baohui Xie, </span><span class="text-body">
+                        Xinrui Zhu, </span><span class="text-body">
+                        <strong>Zhiyuan Lu</strong>, </span><span class="text-body">
+                        Yuan Pu, </span><span class="text-body">
+                        Tongkai Wu, </span><span class="text-body">
+                        Xiaofeng Zou, </span><span class="text-body">
+                        Bei Yu, </span><span class="text-body">
+                        Tinghuan Chen</span></p>
+                        <p class="mt-0 mb-0 small"><i>Design Automation Conference (<strong>DAC</strong>)</i> 2025  <span class="badge badge-pill badge-publication badge-success">CCF-A Conference</span></p>
+
+                        <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
+                            <a target="_blank" href="https://doi.org/10.1109/DAC63849.2025.11132920">[DOI]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card w-100 d-md-none border-top-0 border-right-0 border-left-0 rounded-0" style="overflow-y: scroll;"><img src="assets/images/covers/dsplacer.jpg" alt="DSPlacer: DSP Placement for FPGA-based CNN Accelerator" class="card-img w-100"><div class="card-img-overlay d-flex align-items-start flex-column" style="background-color: rgba(255, 255, 255, 0.85);">
+                <div class="mb-auto"></div>
+                <div>
+                    <h5 class="mt-0 mb-1 font-weight-normal">DSPlacer: DSP Placement for FPGA-based CNN Accelerator</h5>
+                    <p class="mt-0 mb-0 small"><span class="text-body">
+                    Baohui Xie, </span><span class="text-body">
+                    Xinrui Zhu, </span><span class="text-body">
+                    <strong>Zhiyuan Lu</strong>, </span><span class="text-body">
+                    Yuan Pu, </span><span class="text-body">
+                    Tongkai Wu, </span><span class="text-body">
+                    Xiaofeng Zou, </span><span class="text-body">
+                    Bei Yu, </span><span class="text-body">
+                    Tinghuan Chen</span></p>
+                    <p class="mt-0 mb-0 small"><i>Design Automation Conference (<strong>DAC</strong>)</i> 2025  <span class="badge badge-pill badge-publication badge-success">CCF-A Conference</span></p>
+                    <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
+                        <a target="_blank" href="https://doi.org/10.1109/DAC63849.2025.11132920">[DOI]</a>
+                    </p>
+                </div>
+            </div>
+            </div>
+
+            <div class="d-none d-md-block">
+                <div class="row no-gutters border-bottom"><div class="col-md-3 col-xl-2 mb-md-0 p-md-3 d-flex align-items-center">
+                        <img src="assets/images/covers/pcbmigrator.jpg" alt="PCB-Migrator: Automated PCB PnR Migration" class="w-100 rounded-sm">
+                    </div>
+                    <div class="col-md-9 col-xl-10 p-3 pl-md-0"><h5 class="mt-0 mb-1 font-weight-normal">PCB-Migrator: Automated PCB PnR Migration</h5>
+                        <p class="mt-0 mb-0 small"><span class="text-body">
+                        Yaohui Han, </span><span class="text-body">
+                        Beichen Li, </span><span class="text-body">
+                        Rongliang Fu, </span><span class="text-body">
+                        Qunsong Ye, </span><span class="text-body">
+                        <strong>Zhiyuan Lu</strong>, </span><span class="text-body">
+                        Junchen Liu, </span><span class="text-body">
+                        Bei Yu, </span><span class="text-body">
+                        Tsung-Yi Ho, </span><span class="text-body">
+                        Tinghuan Chen</span></p>
+                        <p class="mt-0 mb-0 small"><i>Design, Automation and Test in Europe Conference (<strong>DATE</strong>)</i> 2026  <span class="badge badge-pill badge-publication badge-success">CCF-B Conference</span></p>
+
+                        <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
+                            <a target="_blank" href="https://doi.org/10.23919/DATE69613.2026.11539307">[DOI]</a>
+                            <a target="_blank" href="https://www.cse.cuhk.edu.hk/~byu/papers/C323-DATE2026-PCB.pdf">[Paper]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card w-100 d-md-none border-top-0 border-right-0 border-left-0 rounded-0" style="overflow-y: scroll;"><img src="assets/images/covers/pcbmigrator.jpg" alt="PCB-Migrator: Automated PCB PnR Migration" class="card-img w-100"><div class="card-img-overlay d-flex align-items-start flex-column" style="background-color: rgba(255, 255, 255, 0.85);">
+                <div class="mb-auto"></div>
+                <div>
+                    <h5 class="mt-0 mb-1 font-weight-normal">PCB-Migrator: Automated PCB PnR Migration</h5>
+                    <p class="mt-0 mb-0 small"><span class="text-body">
+                    Yaohui Han, </span><span class="text-body">
+                    Beichen Li, </span><span class="text-body">
+                    Rongliang Fu, </span><span class="text-body">
+                    Qunsong Ye, </span><span class="text-body">
+                    <strong>Zhiyuan Lu</strong>, </span><span class="text-body">
+                    Junchen Liu, </span><span class="text-body">
+                    Bei Yu, </span><span class="text-body">
+                    Tsung-Yi Ho, </span><span class="text-body">
+                    Tinghuan Chen</span></p>
+                    <p class="mt-0 mb-0 small"><i>Design, Automation and Test in Europe Conference (<strong>DATE</strong>)</i> 2026  <span class="badge badge-pill badge-publication badge-success">CCF-B Conference</span></p>
+                    <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
+                        <a target="_blank" href="https://doi.org/10.23919/DATE69613.2026.11539307">[DOI]</a>
+                        <a target="_blank" href="https://www.cse.cuhk.edu.hk/~byu/papers/C323-DATE2026-PCB.pdf">[Paper]</a>
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer py-3 mt-5 shadow">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 text-center text-md-left mb-2 mb-md-0">
+                    <div class="text-muted">
+                        <i>Last updated: Sep 2026</i>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 text-center text-md-right mb-2 mb-md-0">
+                    <div class="text-muted">
+                        <i>© 2026 Zhiyuan (River) Lu</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"
+        integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg=="
+        crossorigin="anonymous"></script>
 </body>
 </html>
