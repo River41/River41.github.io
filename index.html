@@ -79,7 +79,6 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
                     <li class="nav-item"><a class="nav-link" href="#industry">Industry</a></li>
-                    <li class="nav-item"><a class="nav-link" href="assets/files/Zhiyuan_Lu_CV.pdf">CV</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://github.com/River41" target="_blank" rel="noopener">GitHub</a></li>
                 </ul>
             </div>
@@ -127,7 +126,6 @@
                                 </a>
                             </div>
                         </div>
-                        <a class="d-inline-block mt-2" href="assets/files/Zhiyuan_Lu_CV.pdf"><i class="far fa-file-pdf"></i> Curriculum Vitae [PDF]</a>
                     </div>
                 </div>
             </div>
@@ -267,8 +265,7 @@
                 <p class="small text-muted">Columbia University · Graduate Research Assistant · Sep. 2025 – Apr. 2026<br>Advisor: Asaf Cidon</p>
                 <p>Sharing satellite compute requires knowing whether tenant tasks can meet their real-time deadlines. Orbital runs applications expressed as eBPF bytecode in a multitenant runtime. I worked on symbolic execution and cache-aware runtime estimation to support execution-time analysis for these tasks.</p>
                 <p>I built the early symbolic-execution and cache-analysis components of the eBPF runtime analyzer, using Z3 to represent register values and memory addresses and prune infeasible execution paths. I also extended the analyzer to handle supported bounded iterator loops by deriving iteration limits and transforming loop bodies into acyclic control-flow graphs.</p>
-                <details><summary>Analysis techniques &amp; evaluation</summary><div class="mt-3"><p><strong>Symbolic execution.</strong> Implemented the depth-first analysis foundation, representing register values and memory addresses symbolically in Z3. Generated constraints for bytecode arithmetic and branches, and pruned paths with unsatisfiable branch conditions.</p><p><strong>Cache-aware estimates.</strong> Built an early cache model that used solver queries about symbolic addresses under the current path constraints to account for memory-access costs.</p><p><strong>Solver efficiency.</strong> Filtered relevant constraints, reused an incremental solver across branches, added constant-value fast paths, and batched candidate cache conditions. Isolated solver queries in subprocesses to enforce hard timeouts.</p><p><strong>Bounded-loop support.</strong> Used three-color DFS to identify loop regions, derived iteration bounds for supported iterator loops, and transformed their bodies into acyclic control-flow graphs for analysis.</p><p><strong>Team evaluation.</strong> Orbital’s final system produced execution-time bounds that were 38.6% tighter on average than prior methods. On NOEL-V with LRU caches, cache-aware bounds allowed the scheduler to admit 70% more real-time jobs than a baseline that charged every memory access as a cache miss.</p></div></details>
-                <p class="small mt-3 mb-0"><a href="https://github.com/fprime-bpf/runtime-verifier" target="_blank" rel="noopener">[Runtime analyzer code]</a></p>
+
             </div>
         </section>
         <section class="my-3 bg-white shadow-sm rounded-sm" id="industry">
