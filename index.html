@@ -35,13 +35,35 @@
         .no-break { white-space: nowrap; }
         .badge-publication { font-size: 100%; }
         .email-text { font-family: Courier, monospace; }
+
+        section[id], div[id="publications"] { scroll-margin-top: 80px; }
+        .project-copy { line-height: 1.7; }
+        .project-copy p { margin-bottom: 1rem; }
+        .project-copy h6 { margin-top: 1.75rem; margin-bottom: .75rem; }
+        .project-copy h6:first-child { margin-top: 0; }
+        .project-copy details { margin-top: .75rem; }
+        .project-copy summary { color: #007bff; cursor: pointer; }
+        .project-copy details[open] summary { margin-bottom: 1rem; }
+        #industry .project-copy > div[id] + div[id] { margin-top: 2rem; }
+        .paper-entry { line-height: 1.65; }
+        .paper-entry .paper-description { margin-top: .75rem; margin-bottom: .5rem; }
+        .paper-entry details { margin-top: .75rem; }
+        .paper-entry summary { color: #007bff; cursor: pointer; }
+        .paper-entry details[open] summary { margin-bottom: .75rem; }
+        .paper-entry img { max-width: 190px; }
+        @media (max-width: 767.98px) {
+            .card-body.p-5 { padding: 1.75rem !important; }
+            .paper-entry img { max-width: 130px; }
+            .small.d-flex { flex-wrap: wrap; gap: .25rem .75rem; }
+            .navbar-nav .nav-link { padding-top: .6rem; padding-bottom: .6rem; }
+        }
     </style>
 </head>
 
 <body class="bg-light">
     <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top mb-5 shadow-sm">
         <div class="container">
-            <a class="navbar-brand"><strong>river41.github.io</strong></a>
+            <a class="navbar-brand" href="/"><strong>river41.github.io</strong></a>
             <button class="navbar-toggler" style="font-size: 1em; padding: 0.5em;" type="button"
                 data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -55,9 +77,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#publications">Publications</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/River41" target="_blank">GitHub</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#industry">Industry</a></li>
+                    <li class="nav-item"><a class="nav-link" href="assets/files/Zhiyuan_Lu_CV.pdf">CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/River41" target="_blank" rel="noopener">GitHub</a></li>
                 </ul>
             </div>
         </div>
@@ -75,8 +98,9 @@
                                     <strong>M.S. Student @Electrical Engineering, Columbia University</strong><br />
                                 </p>
                                 <div class="text-profile-bio">
-                                    <p>Hi! I am Zhiyuan (River) Lu, an M.S. student in <a href="https://www.ee.columbia.edu/">Electrical Engineering</a> at <a href="https://www.columbia.edu/">Columbia University</a> and a graduate research assistant, working on <strong>eBPF-based runtime verification</strong> for real-time systems. Previously, I did undergraduate research on electronic design automation at <a href="https://www.cuhk.edu.cn/en">CUHK-Shenzhen</a> — FPGA DSP placement and PCB physical design.</p>
-                                    <p>My research interests span computer systems: runtime verification &amp; program analysis, systems for machine learning, and design automation. I am always happy to talk about research in related areas — feel free to reach out!</p>
+                                    <p>Hi! I am Zhiyuan (River) Lu, an M.S. student in <a href="https://www.ee.columbia.edu/">Electrical Engineering</a> at <a href="https://www.columbia.edu/">Columbia University</a>. I work on computer systems, with recent experience in eBPF program and timing analysis, LLM inference profiling, and accelerator communication.</p>
+                                    <p>At Columbia, I worked with <strong>Asaf Cidon</strong> on <a href="#research">Orbital</a>, a system for real-time multitenant computing in space. During my internship at <a href="#industry">ChipLTech</a>, I contributed to inference observability, a TPU communication library, and tools for LLM-assisted kernel development. Previously, I studied Mathematics and Applied Mathematics at <a href="https://www.cuhk.edu.cn/en">CUHK-Shenzhen</a> and worked with <strong>Tinghuan Chen</strong> on FPGA DSP placement and PCB layout migration.</p>
+                                    <p>My interests span systems software, program analysis, and systems for machine learning. I enjoy connecting mathematical models with real system behavior, and I am always happy to discuss research in related areas. Feel free to reach out!</p>
                                 </div>
                             </div>
                             <div class="col-md-auto d-none d-md-block">
@@ -103,6 +127,7 @@
                                 </a>
                             </div>
                         </div>
+                        <a class="d-inline-block mt-2" href="assets/files/Zhiyuan_Lu_CV.pdf"><i class="far fa-file-pdf"></i> Curriculum Vitae [PDF]</a>
                     </div>
                 </div>
             </div>
@@ -126,7 +151,7 @@
                                                 <div class="small"></div>
                                                 <div class="small d-flex">
                                                     <div>M.S. in Electrical Engineering</div>
-                                                    <div class="mt-auto ml-auto no-break"><em>Sep. 2025 - Dec. 2026</em></div>
+                                                    <div class="mt-auto ml-auto no-break"><em>Sep. 2025 - Dec. 2026 (expected)</em></div>
                                                 </div>
                                             </div>
                                         </li>
@@ -150,14 +175,22 @@
                                 <div class="mx-2 my-1">
                                     <h6>Experience</h6>
                                     <ul class="list-unstyled mb-1">
+                                        <li class="media mb-3">
+                                            <i class="fas fa-briefcase mr-2 mt-1 text-muted"></i>
+                                            <div class="media-body">
+                                                <div>ChipLTech</div>
+                                                <div class="small">Software Engineering Intern, AI Infrastructure</div>
+                                                <div class="small d-flex flex-wrap"><div><a href="#industry">Inference profiling, TPU communication &amp; kernel tools</a></div><div class="ml-auto no-break"><em>May - Aug. 2026</em></div></div>
+                                            </div>
+                                        </li>
                                         <li class="media mb-1">
                                             <i class="fas fa-briefcase mr-2 mt-1 text-muted"></i>
                                             <div class="media-body">
                                                 <div>Columbia University</div>
                                                 <div class="small"></div>
                                                 <div class="small d-flex">
-                                                    <div>Graduate Research Assistant<br />Runtime verification for eBPF programs.</div>
-                                                    <div class="mt-auto ml-auto no-break"><em>Oct. 2025 - Present</em></div>
+                                                    <div>Graduate Research Assistant<br />eBPF program and timing analysis with Asaf Cidon.</div>
+                                                    <div class="mt-auto ml-auto no-break"><em>Sep. 2025 - Apr. 2026</em></div>
                                                 </div>
                                             </div>
                                         </li>
@@ -201,111 +234,63 @@
         </div>
 
         <div class="my-3 bg-white shadow-sm rounded-sm" id="publications">
-            <h6 class="border-bottom p-3 mb-0">
-                <i class="fas fa-star"></i> Publications
-            </h6>
-
-            <div class="d-none d-md-block">
-                <div class="row no-gutters border-bottom"><div class="col-md-3 col-xl-2 mb-md-0 p-md-3 d-flex align-items-center">
-                        <img src="assets/images/covers/dsplacer.jpg" alt="DSPlacer: DSP Placement for FPGA-based CNN Accelerator" class="w-100 rounded-sm">
-                    </div>
-                    <div class="col-md-9 col-xl-10 p-3 pl-md-0"><h5 class="mt-0 mb-1 font-weight-normal">DSPlacer: DSP Placement for FPGA-based CNN Accelerator</h5>
-                        <p class="mt-0 mb-0 small"><span class="text-body">
-                        Baohui Xie, </span><span class="text-body">
-                        Xinrui Zhu, </span><span class="text-body">
-                        <strong>Zhiyuan Lu</strong>, </span><span class="text-body">
-                        Yuan Pu, </span><span class="text-body">
-                        Tongkai Wu, </span><span class="text-body">
-                        Xiaofeng Zou, </span><span class="text-body">
-                        Bei Yu, </span><span class="text-body">
-                        Tinghuan Chen</span></p>
-                        <p class="mt-0 mb-0 small"><i>Design Automation Conference (<strong>DAC</strong>)</i> 2025  <span class="badge badge-pill badge-publication badge-success">CCF-A Conference</span></p>
-
-                        <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
-                            <a target="_blank" href="https://doi.org/10.1109/DAC63849.2025.11132920">[DOI]</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card w-100 d-md-none border-top-0 border-right-0 border-left-0 rounded-0" style="overflow-y: scroll;"><img src="assets/images/covers/dsplacer.jpg" alt="DSPlacer: DSP Placement for FPGA-based CNN Accelerator" class="card-img w-100"><div class="card-img-overlay d-flex align-items-start flex-column" style="background-color: rgba(255, 255, 255, 0.85);">
-                <div class="mb-auto"></div>
-                <div>
-                    <h5 class="mt-0 mb-1 font-weight-normal">DSPlacer: DSP Placement for FPGA-based CNN Accelerator</h5>
-                    <p class="mt-0 mb-0 small"><span class="text-body">
-                    Baohui Xie, </span><span class="text-body">
-                    Xinrui Zhu, </span><span class="text-body">
-                    <strong>Zhiyuan Lu</strong>, </span><span class="text-body">
-                    Yuan Pu, </span><span class="text-body">
-                    Tongkai Wu, </span><span class="text-body">
-                    Xiaofeng Zou, </span><span class="text-body">
-                    Bei Yu, </span><span class="text-body">
-                    Tinghuan Chen</span></p>
-                    <p class="mt-0 mb-0 small"><i>Design Automation Conference (<strong>DAC</strong>)</i> 2025  <span class="badge badge-pill badge-publication badge-success">CCF-A Conference</span></p>
-                    <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
-                        <a target="_blank" href="https://doi.org/10.1109/DAC63849.2025.11132920">[DOI]</a>
-                    </p>
-                </div>
-            </div>
-            </div>
-
-            <div class="d-none d-md-block">
-                <div class="row no-gutters border-bottom"><div class="col-md-3 col-xl-2 mb-md-0 p-md-3 d-flex align-items-center">
-                        <img src="assets/images/covers/pcbmigrator.jpg" alt="PCB-Migrator: Automated PCB PnR Migration" class="w-100 rounded-sm">
-                    </div>
-                    <div class="col-md-9 col-xl-10 p-3 pl-md-0"><h5 class="mt-0 mb-1 font-weight-normal">PCB-Migrator: Automated PCB PnR Migration</h5>
-                        <p class="mt-0 mb-0 small"><span class="text-body">
-                        Yaohui Han, </span><span class="text-body">
-                        Beichen Li, </span><span class="text-body">
-                        Rongliang Fu, </span><span class="text-body">
-                        Qunsong Ye, </span><span class="text-body">
-                        <strong>Zhiyuan Lu</strong>, </span><span class="text-body">
-                        Junchen Liu, </span><span class="text-body">
-                        Bei Yu, </span><span class="text-body">
-                        Tsung-Yi Ho, </span><span class="text-body">
-                        Tinghuan Chen</span></p>
-                        <p class="mt-0 mb-0 small"><i>Design, Automation and Test in Europe Conference (<strong>DATE</strong>)</i> 2026  <span class="badge badge-pill badge-publication badge-success">CCF-B Conference</span></p>
-
-                        <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
-                            <a target="_blank" href="https://doi.org/10.23919/DATE69613.2026.11539307">[DOI]</a>
-                            <a target="_blank" href="https://www.cse.cuhk.edu.hk/~byu/papers/C323-DATE2026-PCB.pdf">[Paper]</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card w-100 d-md-none border-top-0 border-right-0 border-left-0 rounded-0" style="overflow-y: scroll;"><img src="assets/images/covers/pcbmigrator.jpg" alt="PCB-Migrator: Automated PCB PnR Migration" class="card-img w-100"><div class="card-img-overlay d-flex align-items-start flex-column" style="background-color: rgba(255, 255, 255, 0.85);">
-                <div class="mb-auto"></div>
-                <div>
+            <h6 class="border-bottom p-3 mb-0"><i class="fas fa-star"></i> Publications <a class="float-right font-weight-normal small" href="assets/papers/publications.bib" download>[BibTeX]</a></h6>
+            <article class="row no-gutters border-bottom paper-entry" id="pcb-migrator">
+                <div class="col-md-3 col-xl-2 p-3 d-flex align-items-start"><a href="assets/papers/PCB-Migrator-DATE2026.pdf"><img src="assets/images/covers/pcbmigrator.jpg" alt="PCB-Migrator: Automated PCB PnR Migration — paper preview" class="w-100 rounded-sm" loading="lazy"></a></div>
+                <div class="col-md-9 col-xl-10 p-3 pl-md-0">
                     <h5 class="mt-0 mb-1 font-weight-normal">PCB-Migrator: Automated PCB PnR Migration</h5>
-                    <p class="mt-0 mb-0 small"><span class="text-body">
-                    Yaohui Han, </span><span class="text-body">
-                    Beichen Li, </span><span class="text-body">
-                    Rongliang Fu, </span><span class="text-body">
-                    Qunsong Ye, </span><span class="text-body">
-                    <strong>Zhiyuan Lu</strong>, </span><span class="text-body">
-                    Junchen Liu, </span><span class="text-body">
-                    Bei Yu, </span><span class="text-body">
-                    Tsung-Yi Ho, </span><span class="text-body">
-                    Tinghuan Chen</span></p>
-                    <p class="mt-0 mb-0 small"><i>Design, Automation and Test in Europe Conference (<strong>DATE</strong>)</i> 2026  <span class="badge badge-pill badge-publication badge-success">CCF-B Conference</span></p>
-                    <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
-                        <a target="_blank" href="https://doi.org/10.23919/DATE69613.2026.11539307">[DOI]</a>
-                        <a target="_blank" href="https://www.cse.cuhk.edu.hk/~byu/papers/C323-DATE2026-PCB.pdf">[Paper]</a>
-                    </p>
+                    <p class="mb-1 small">Yaohui Han, Beichen Li, Rongliang Fu, Qunsong Ye, <strong>Zhiyuan Lu</strong>, Junchen Liu, Bei Yu, Tsung-Yi Ho, Tinghuan Chen</p>
+                    <p class="mb-1 small"><i>Design, Automation and Test in Europe Conference (DATE), 2026</i></p>
+                    <p class="paper-description">Transfers an existing PCB design to a changed board outline or new obstacles while preserving its placement and routing characteristics. The framework combines constraint-based placement migration with graph-based routing migration.</p>
+                    <p class="mb-2 text-muted"><strong>My contribution:</strong> led placement-model and algorithm development, implemented the C++ solution, and wrote the methodology section.</p>
+                    <p class="mb-0 small"><a href="assets/papers/PCB-Migrator-DATE2026.pdf">[Paper]</a> <a href="https://doi.org/10.23919/DATE69613.2026.11539307" target="_blank" rel="noopener">[DOI]</a></p>
+                    <details class="mb-2"><summary>Research details &amp; results</summary><div class="project-copy mt-3"><p class="text-muted">CUHK-Shenzhen · Undergraduate Research Assistant · Nov 2024 – Apr 2025<br>Advisor: Tinghuan Chen · Associated paper: PCB-Migrator</p><p>Formulated placement migration as a mixed-integer linear program, encoding component positions, geometric constraints, and the objective of preserving the reference design.</p><p>Designed an LP-relaxation and iterative legalization strategy to turn candidate solutions into feasible placements.</p><p>Led algorithm design and C++ implementation, and wrote the methodology section of the paper.</p><p><strong>Evaluation.</strong> Across 11 OpenROAD and industrial PCB benchmarks, the framework obtained legal placements using 5.56% of the MILP solver’s runtime at 110.5% of its objective cost.</p></div></details>
                 </div>
-            </div>
-            </div>
+            </article>
+            <article class="row no-gutters border-bottom paper-entry" id="dsplacer">
+                <div class="col-md-3 col-xl-2 p-3 d-flex align-items-start"><a href="assets/papers/DSPlacer-DAC2025.pdf"><img src="assets/images/covers/dsplacer.jpg" alt="DSPlacer: DSP Placement for FPGA-based CNN Accelerator — paper preview" class="w-100 rounded-sm" loading="lazy"></a></div>
+                <div class="col-md-9 col-xl-10 p-3 pl-md-0">
+                    <h5 class="mt-0 mb-1 font-weight-normal">DSPlacer: DSP Placement for FPGA-based CNN Accelerator</h5>
+                    <p class="mb-1 small">Baohui Xie, Xinrui Zhu, <strong>Zhiyuan Lu</strong>, Yuan Pu, Tongkai Wu, Xiaofeng Zou, Bei Yu, Tinghuan Chen</p>
+                    <p class="mb-1 small"><i>Design Automation Conference (DAC), 2025</i></p>
+                    <p class="paper-description">Optimizes DSP placement for FPGA-based CNN accelerators using the structure of their datapaths. The work models placement as a quadratic assignment problem and uses iterative optimization to improve timing.</p>
+                    <p class="mb-2 text-muted"><strong>My contribution:</strong> implemented the minimum-cost-flow algorithm, iterative optimization framework, and experiment scripts.</p>
+                    <p class="mb-0 small"><a href="assets/papers/DSPlacer-DAC2025.pdf">[Paper]</a> <a href="https://doi.org/10.1109/DAC63849.2025.11132920" target="_blank" rel="noopener">[DOI]</a></p>
+                    <details class="mb-2"><summary>Research details &amp; results</summary><div class="project-copy mt-3"><p class="text-muted">CUHK-Shenzhen · Undergraduate Research Assistant · Apr 2024 – Nov 2024<br>Advisor: Tinghuan Chen · Associated paper: DSPlacer</p><p>Implemented a minimum-cost-flow algorithm and an iterative framework for the quadratic assignment problem underlying DSP placement.</p><p>Built the C++ implementation and Vivado/Tcl experiment scripts for the placement workflow.</p><p><strong>Evaluation.</strong> Across five CNN accelerator benchmarks with 197–1,431 DSPs, DSPlacer improved worst negative slack by 32.5% over Vivado 2020.2 and 65% over AMF-Placer 2.0.</p></div></details>
+                </div>
+            </article>
         </div>
-
+        <section class="my-3 bg-white shadow-sm rounded-sm" id="research">
+            <h6 class="border-bottom p-3 mb-0"><i class="fas fa-microscope"></i> Research</h6>
+            <div class="p-4 project-copy" id="orbital">
+                <h5 class="font-weight-normal">Orbital: Efficient Multitenant Computing in Space</h5>
+                <p class="small text-muted">Columbia University · Graduate Research Assistant · Sep. 2025 – Apr. 2026<br>Advisor: Asaf Cidon</p>
+                <p>Sharing satellite compute requires knowing whether tenant tasks can meet their real-time deadlines. Orbital runs applications expressed as eBPF bytecode in a multitenant runtime. I worked on symbolic execution and cache-aware runtime estimation to support execution-time analysis for these tasks.</p>
+                <p>I built the early symbolic-execution and cache-analysis components of the eBPF runtime analyzer, using Z3 to represent register values and memory addresses and prune infeasible execution paths. I also extended the analyzer to handle supported bounded iterator loops by deriving iteration limits and transforming loop bodies into acyclic control-flow graphs.</p>
+                <details><summary>Analysis techniques &amp; evaluation</summary><div class="mt-3"><p><strong>Symbolic execution.</strong> Implemented the depth-first analysis foundation, representing register values and memory addresses symbolically in Z3. Generated constraints for bytecode arithmetic and branches, and pruned paths with unsatisfiable branch conditions.</p><p><strong>Cache-aware estimates.</strong> Built an early cache model that used solver queries about symbolic addresses under the current path constraints to account for memory-access costs.</p><p><strong>Solver efficiency.</strong> Filtered relevant constraints, reused an incremental solver across branches, added constant-value fast paths, and batched candidate cache conditions. Isolated solver queries in subprocesses to enforce hard timeouts.</p><p><strong>Bounded-loop support.</strong> Used three-color DFS to identify loop regions, derived iteration bounds for supported iterator loops, and transformed their bodies into acyclic control-flow graphs for analysis.</p><p><strong>Team evaluation.</strong> Orbital’s final system produced execution-time bounds that were 38.6% tighter on average than prior methods. On NOEL-V with LRU caches, cache-aware bounds allowed the scheduler to admit 70% more real-time jobs than a baseline that charged every memory access as a cache miss.</p></div></details>
+                <p class="small mt-3 mb-0"><a href="https://github.com/fprime-bpf/runtime-verifier" target="_blank" rel="noopener">[Runtime analyzer code]</a></p>
+            </div>
+        </section>
+        <section class="my-3 bg-white shadow-sm rounded-sm" id="industry">
+            <h6 class="border-bottom p-3 mb-0"><i class="fas fa-briefcase"></i> Industry</h6>
+            <div class="p-4 project-copy">
+                <div class="d-flex justify-content-between flex-wrap mb-2"><h5 class="font-weight-normal mb-1">ChipLTech</h5><span class="text-muted small">Shanghai, China · May – Aug. 2026</span></div>
+                <p class="text-muted mb-4">Software Engineering Intern, AI Infrastructure</p>
+<div id="inference-profiling"><h6>LLM inference profiling with eBPF</h6><p>An inference service can stall while its GPU is waiting for CPU work or communication. I contributed to event collection and timeline alignment in a profiler that brings these layers into one view, helping distinguish where time is spent.</p><p>I contributed eBPF collectors for per-thread CPU execution and run-queue waiting time, distinguishing active CPU work from scheduling delays. I paired native-function entry and exit probes to record arguments and call durations, and aligned these events with GPU and communication activity using a shared reference for eBPF and CUPTI timestamps. Together, these traces provided the context to inspect CPU work, communication calls, and GPU idle intervals in the team’s profiler.</p></div>
+<div id="tpu-communication"><h6>TPU collective communication library</h6><p>I started by testing the company’s in-house communication library, then contributed to diagnosis, implementation, and validation across topology discovery and data-transfer paths. The work involved both accelerator hardware and simulator configurations.</p><p>I corrected how inter-device links were classified and worked on physical-device-to-rank mapping, bandwidth-aware ring and hierarchical configurations, and direct-link and host-staged fallback paths. I also fixed a transfer-ordering bug: the sender cleared a transfer’s byte count before the receiving stage used it for a host-to-device copy. Preserving that information resolved the ordering error in the collective transfer path.</p><details><summary>Topology, execution &amp; debugging details</summary><div class="mt-3"><p><strong>Topology correctness.</strong> Corrected the classification of links between devices so they were distinguished from a device’s own local path. Worked on mapping physical device identifiers to communication ranks and handling topology information in hardware and simulator environments.</p><p><strong>Topology configurations.</strong> Participated in bandwidth-aware ring and hierarchical configuration work, connecting the physical interconnect graph with the settings used by collective operations.</p><p><strong>Direct links and fallback paths.</strong> Worked on inter-device reachability, direct-link execution, and host-staged fallback logic when a direct path was unavailable.</p><p><strong>Transfer ordering.</strong> Fixed an issue where a transfer’s byte count was cleared before the receiving stage used it for a host-to-device copy. Preserving that information addressed the ordering error in the collective transfer path.</p><p><strong>Execution support and validation.</strong> Contributed graph-capture support and chunked execution for large collective messages, alongside testing and regression checks.</p>
+          <p>Helped deploy the library on four bare-metal machines and bring up C++ all-reduce tests over a range of message sizes. Participated in InfiniBand/SHARP integration and investigated the interactions between transport setup and communication-graph construction.</p>
+          <p>Used GDB to diagnose an initialization crash caused by a structure-layout mismatch between a framework library and the installed communication-library headers. This investigation helped motivate version-consistency checks.</p>
+        </div></details></div>
+<div id="kernel-development"><h6>Tools and data for LLM-assisted kernel development</h6><p>I also worked on preparing source programs, training examples, and automated validation for a team building LLM-assisted TPU kernel generation and optimization tools.</p><p>I used Clang AST-based source reduction to prepare compact, compilable examples from historical versions of approximately 2,000 operators, and built a multi-device pipeline for correctness checks and repeated performance measurements. I also prepared training data for kernel generation, including more than 1,800 intrinsic-instruction examples, ABI validation, and deduplication.</p><details><summary>Data pipeline, validation &amp; collaboration</summary><div class="mt-3"><p><strong>Source extraction and reduction.</strong> Processed historical versions of approximately 2,000 operators and used Clang AST-based dependency pruning to produce compact, compilable examples. One example was reduced from 3,620 lines to 100.</p><p><strong>Automated validation.</strong> Built a multi-device test pipeline with correctness checks, repeated performance measurements, failure retries, and environment setup. The pipeline recorded more than 2,000 test runs to support example selection.</p><p><strong>Training-data construction.</strong> Built more than 1,800 intrinsic-instruction examples, added ABI validation to kernel-synthesis examples, and used MinHash LSH for deduplication. Organized the initial supervised fine-tuning data for the team’s first training round.</p><p><strong>Evidence and collaboration.</strong> Proposed supplying retrieved interface, shape, layout, and constraint evidence alongside a kernel-generation request. Guided two interns on testing, data preparation, and debugging the data-generation workflow.</p></div></details></div>
+            </div>
+        </section>
     </div>
-
     <footer class="footer py-3 mt-5 shadow">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6 text-center text-md-left mb-2 mb-md-0">
                     <div class="text-muted">
-                        <i>Last updated: Sep 2026</i>
+                        <i>Last updated: Nov 2026</i>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 text-center text-md-right mb-2 mb-md-0">
@@ -325,5 +310,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"
         integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg=="
         crossorigin="anonymous"></script>
+    <script>
+        $('#navbarResponsive .nav-link').on('click', function () {
+            $('#navbarResponsive').collapse('hide');
+        });
+    </script>
 </body>
 </html>
